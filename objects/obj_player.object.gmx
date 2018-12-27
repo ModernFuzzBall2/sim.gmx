@@ -28,12 +28,8 @@
             <string>// set the image speed for best aesthetic 
 image_speed = 0.1; //idle speed
 
-// set player health to max
-//global.hp = 5;
-global.hp = 4; //test
-
-// set score to 0
-global.s = 0;
+// end all curent sounds
+audio_stop_all();
 
 // set speed to default
 sp = 2;
@@ -47,6 +43,11 @@ if (!instance_exists(obj_cursor))
 if (!instance_exists(obj_spawner))
 {
     instance_create(x,y,obj_spawner);
+}
+
+if (!instance_exists(obj_game))
+{
+    instance_create(x,y,obj_game);
 }
 
 
@@ -83,6 +84,15 @@ if (instance_exists(obj_cursor))
 {
     instance_destroy(obj_cursor);
 }
+
+// stop the background song
+audio_stop_sound(snd_background_one);
+audio_stop_sound(snd_background_two);
+audio_stop_sound(snd_background_three);
+audio_stop_sound(snd_background_four);
+
+// play death song
+audio_play_sound(snd_background_four, 10, true);
 </string>
           </argument>
         </arguments>
@@ -257,10 +267,11 @@ alarm[0] = room_speed * 20;
           <argument>
             <kind>1</kind>
             <string>// if player clicks fire
-if (mouse_check_button(mb_left))
+if (mouse_check_button_pressed(mb_left))
 {
     //instance_destroy();
     global.hp -= 1;
+
 }
 </string>
           </argument>
@@ -285,52 +296,6 @@ if (mouse_check_button(mb_left))
           <argument>
             <kind>1</kind>
             <string>game_restart();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="39">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.hp ++;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="37">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.hp --;
 </string>
           </argument>
         </arguments>

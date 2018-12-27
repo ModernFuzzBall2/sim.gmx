@@ -191,11 +191,10 @@ else
           <argument>
             <kind>1</kind>
             <string>// if player clicks fire
-if (mouse_check_button(mb_left))
+if (mouse_check_button_pressed(mb_left))
 {
     instance_destroy();
     global.s ++;
-    audio_play_sound(snd_point, 100, false);
 }
 </string>
           </argument>
