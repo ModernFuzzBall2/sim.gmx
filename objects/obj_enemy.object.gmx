@@ -38,6 +38,35 @@ sp = 1;
 
 // search for the player
 alarm[0] = room_speed*2;
+
+// take into consideration this enemy for the enemy counter
+global.ec ++;
+
+ready = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// remove 1 from the enemy counter
+global.ec --;
 </string>
           </argument>
         </arguments>
@@ -66,6 +95,7 @@ newdir = point_direction(x,y,obj_player.x,obj_player.y) + irandom_range(-20,20);
 speed=sp;
 direction=newdir;
 alarm[0]= irandom_range(15,45);
+ready = true;
 } 
 </string>
           </argument>
@@ -166,8 +196,14 @@ else
             <string>// make the enemy fly back
 
 // remove a heart
+if (ready == true)
+{
+    global.hp --;
+}
 
-
+ready = false;
+instance_create(x,y,obj_enemy);
+instance_destroy();
 </string>
           </argument>
         </arguments>

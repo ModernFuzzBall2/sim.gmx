@@ -17,6 +17,13 @@
       <sound>sound\snd_background_three</sound>
       <sound>sound\snd_background_four</sound>
     </sounds>
+    <sound>sound\snd_boss_death</sound>
+    <sound>sound\snd_boss_oof_four</sound>
+    <sound>sound\snd_boss_oof_three</sound>
+    <sound>sound\snd_boss_oof_two</sound>
+    <sound>sound\snd_boss_oof_one</sound>
+    <sound>sound\snd_boss_one</sound>
+    <sound>sound\snd_special</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="player">
@@ -34,6 +41,8 @@
       <sprite>sprites\spr_score</sprite>
       <sprite>sprites\spr_popup_one</sprite>
       <sprite>sprites\spr_dead</sprite>
+      <sprite>sprites\spr_credits_key</sprite>
+      <sprite>sprites\spr_boss_bar</sprite>
     </sprites>
     <sprite>sprites\spr_cursor</sprite>
     <sprite>sprites\spr_countdown</sprite>
@@ -45,6 +54,7 @@
       <sprite>sprites\icon_48</sprite>
       <sprite>sprites\icon_256</sprite>
     </sprites>
+    <sprite>sprites\spr_gift</sprite>
     <sprite>sprites\spr_boss</sprite>
   </sprites>
   <backgrounds name="background">
@@ -62,11 +72,14 @@
     <object>objects\obj_mushroom</object>
     <object>objects\obj_health_pot</object>
     <object>objects\gui_popup_one</object>
+    <object>objects\obj_credits</object>
+    <object>objects\obj_gift</object>
     <object>objects\obj_boss</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
     <room>rooms\rm_boss_one</room>
+    <room>rooms\rm_credits</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

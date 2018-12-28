@@ -37,6 +37,11 @@ global.noui = false;
 active = false;
 
 global.ready = true;
+
+// enemy counter
+global.ec = 0;
+// enemies needed
+global.en = 3;
 </string>
           </argument>
         </arguments>
@@ -95,10 +100,18 @@ if (keyboard_check_pressed(vk_escape))
 // if the player died, make any key restard the game
 if (global.hp &lt;= 0)
 {
-    if (keyboard_check(vk_anykey) &amp;&amp; active = true)
+    if (keyboard_check(vk_anykey) &amp;&amp; active = true &amp;&amp; !keyboard_check(vk_f1))
     {
+        // restart game
         // save score //
         game_restart();
+    }
+    
+    if (keyboard_check(vk_f1) &amp;&amp; active = true)
+    {
+        // go to credits room
+        // save score //
+        room_goto(rm_credits);
     }
 }
 
@@ -249,17 +262,81 @@ case 10:
     draw_sprite(spr_score, 10, 127, 1);
     break;
 }
+
+if (instance_exists(obj_boss))
+{
+    switch (obj_boss.hp)
+    {
+        case 0:
+            draw_sprite(spr_boss_bar, 16, 0, 0);
+        break;
+        case 1:
+            draw_sprite(spr_boss_bar, 15, 0, 0);
+        break;
+        case 2:
+            draw_sprite(spr_boss_bar, 14, 0, 0);
+        break;
+        case 3:
+            draw_sprite(spr_boss_bar, 13, 0, 0);
+        break;
+        case 4:
+            draw_sprite(spr_boss_bar, 12, 0, 0);
+        break;
+        case 5:
+            draw_sprite(spr_boss_bar, 11, 0, 0);
+        break;
+        case 6:
+            draw_sprite(spr_boss_bar, 10, 0, 0);
+        break;
+        case 7:
+            draw_sprite(spr_boss_bar, 9, 0, 0);
+        break;
+        case 8:
+            draw_sprite(spr_boss_bar, 8, 0, 0);
+        break;
+        case 9:
+            draw_sprite(spr_boss_bar, 7, 0, 0);
+        break;
+        case 10:
+            draw_sprite(spr_boss_bar, 6, 0, 0);
+        break;
+        case 11:
+            draw_sprite(spr_boss_bar, 5, 0, 0);
+        break;
+        case 12:
+            draw_sprite(spr_boss_bar, 4, 0, 0);
+        break;
+        case 13:
+            draw_sprite(spr_boss_bar, 3, 0, 0);
+        break;
+        case 14:
+            draw_sprite(spr_boss_bar, 2, 0, 0);
+        break;
+        case 15:
+            draw_sprite(spr_boss_bar, 1, 0, 0);
+        break;
+        case 16:
+            draw_sprite(spr_boss_bar, 0, 0, 0);
+        break; 
+        default:
+            draw_sprite(spr_boss_bar, 17, 0, 0);
+        break;
+    }
+}
 }
 
 // show death screen
 if (global.hp &lt;= 0)
 {
+    draw_sprite(spr_credits_key,0,0,0);
+
     draw_set_color(c_red);
     draw_set_alpha(.50);
     draw_rectangle(0,0,192,108,false);
 
     draw_set_alpha(1);
     draw_sprite(spr_dead,0,96,54);
+    
 }
 </string>
           </argument>
