@@ -122,6 +122,12 @@ if (global.s &gt;= 10 &amp;&amp; room == rm_one)
 {
     room_goto(rm_boss_one);   
 }
+
+// if players hp is more than max stars, hp becomes max
+if (global.hp &gt; MAXHP) // MAXHP == 5
+{
+    global.hp = MAXHP;
+}
 </string>
           </argument>
         </arguments>
@@ -224,6 +230,7 @@ case 1:
     draw_sprite(spr_healthbar, 4, 0, 1);
     break;
 case 0:
+default:
     draw_sprite(spr_healthbar, 5, 0, 1);
     break;
 }
@@ -452,137 +459,7 @@ if (floor((global.s / 10000000) % 10) &gt; 0)
 // draw score (finish)
 
 
-// old //
-/*switch (global.s) {
-case 0:
-    draw_sprite(spr_score, 0, 127, 1);
-    break;
-case 1:
-    draw_sprite(spr_score, 1, 127, 1);
-    break;
-case 2:
-    draw_sprite(spr_score, 2, 127, 1);
-    break;
-case 3:
-    draw_sprite(spr_score, 3, 127, 1);
-    break;
-case 4:
-    draw_sprite(spr_score, 4, 127, 1);
-    break;
-case 5:
-    draw_sprite(spr_score, 5, 127, 1);
-    break;
-case 6:
-    draw_sprite(spr_score, 6, 127, 1);
-    break;
-case 7:
-    draw_sprite(spr_score, 7, 127, 1);
-    break;
-case 8:
-    draw_sprite(spr_score, 8, 127, 1);
-    break;
-case 9:
-    draw_sprite(spr_score, 9, 127, 1);
-    break;
-case 10:
-    draw_sprite(spr_score, 10, 127, 1);
-    break;
-case 11:
-    draw_sprite(spr_score, 11, 127, 1);
-    break;
-case 12:
-    draw_sprite(spr_score, 12, 127, 1);
-    break;
-case 13:
-    draw_sprite(spr_score, 13, 127, 1);
-    break;
-case 14:
-    draw_sprite(spr_score, 14, 127, 1);
-    break;
-case 15:
-    draw_sprite(spr_score, 15, 127, 1);
-    break;
-case 16:
-    draw_sprite(spr_score, 16, 127, 1);
-    break;
-case 17:
-    draw_sprite(spr_score, 17, 127, 1);
-    break;
-case 18:
-    draw_sprite(spr_score, 18, 127, 1);
-    break;
-case 19:
-    draw_sprite(spr_score, 19, 127, 1);
-    break;
-case 20:
-    draw_sprite(spr_score, 20, 127, 1);
-    break;
-// points 100+
-case 100:
-    draw_sprite(spr_score_100, 0, 127, 1);
-    break;
-case 101:
-    draw_sprite(spr_score_100, 1, 127, 1);
-    break;
-case 102:
-    draw_sprite(spr_score_100, 2, 127, 1);
-    break;
-case 103:
-    draw_sprite(spr_score_100, 3, 127, 1);
-    break;
-case 104:
-    draw_sprite(spr_score_100, 4, 127, 1);
-    break;
-case 105:
-    draw_sprite(spr_score_100, 5, 127, 1);
-    break;
-case 106:
-    draw_sprite(spr_score_100, 6, 127, 1);
-    break;
-case 107:
-    draw_sprite(spr_score_100, 7, 127, 1);
-    break;
-case 108:
-    draw_sprite(spr_score_100, 8, 127, 1);
-    break;
-case 109:
-    draw_sprite(spr_score_100, 9, 127, 1);
-    break;
-case 110:
-    draw_sprite(spr_score_100, 10, 127, 1);
-    break;
-case 111:
-    draw_sprite(spr_score_100, 11, 127, 1);
-    break;
-case 112:
-    draw_sprite(spr_score_100, 12, 127, 1);
-    break;
-case 113:
-    draw_sprite(spr_score_100, 13, 127, 1);
-    break;
-case 114:
-    draw_sprite(spr_score_100, 14, 127, 1);
-    break;
-case 115:
-    draw_sprite(spr_score_100, 15, 127, 1);
-    break;
-case 116:
-    draw_sprite(spr_score_100, 16, 127, 1);
-    break;
-case 117:
-    draw_sprite(spr_score_100, 17, 127, 1);
-    break;
-case 118:
-    draw_sprite(spr_score_100, 18, 127, 1);
-    break;
-case 119:
-    draw_sprite(spr_score_100, 19, 127, 1);
-    break;
-case 120:
-    draw_sprite(spr_score_100, 20, 127, 1);
-    break;
-}*/
-
+// show the boss bar if the boss exists
 if (instance_exists(obj_boss))
 {
     switch (obj_boss.hp)
@@ -645,7 +522,7 @@ if (instance_exists(obj_boss))
 }
 }
 
-// show death screen
+// show death screen when player dies
 if (global.hp &lt;= 0)
 {
     draw_sprite(spr_credits_key,0,0,0);
