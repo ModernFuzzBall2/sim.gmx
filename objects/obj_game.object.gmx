@@ -42,6 +42,8 @@ global.ready = true;
 global.ec = 0;
 // enemies needed
 global.en = 3;
+
+
 </string>
           </argument>
         </arguments>
@@ -226,8 +228,232 @@ case 0:
     break;
 }
 
-// draw score
-switch (global.s) {
+// draw score (start)
+
+// draw the main scoreboard background
+draw_sprite(spr_score_bor, 0, 127, 1);
+
+// draw the first digit (000001 - 000009)
+switch (floor(global.s % 10)) // (lastnumber = floor(score % 10))
+{
+case 1:
+    draw_sprite(spr_score_num, 1, 185, 1);
+    break;
+case 2:
+    draw_sprite(spr_score_num, 2, 185, 1);
+    break;
+case 3:
+    draw_sprite(spr_score_num, 3, 185, 1);
+    break;
+case 4:
+    draw_sprite(spr_score_num, 4, 185, 1);
+    break;
+case 5:
+    draw_sprite(spr_score_num, 5, 185, 1);
+    break;
+case 6:
+    draw_sprite(spr_score_num, 6, 185, 1);
+    break;
+case 7:
+    draw_sprite(spr_score_num, 7, 185, 1);
+    break;
+case 8:
+    draw_sprite(spr_score_num, 8, 185, 1);
+    break;
+case 9:
+    draw_sprite(spr_score_num, 9, 185, 1);
+    break;
+default:
+    // do nothing
+    break;
+}
+
+// draw the second digit (000010 - 000090)
+switch (floor((global.s / 10) % 10)) // (secondnumber = floor((score / 10) % 10))
+{
+case 1:
+    draw_sprite(spr_score_num, 1, 180, 1);
+    break;
+case 2:
+    draw_sprite(spr_score_num, 2, 180, 1);
+    break;
+case 3:
+    draw_sprite(spr_score_num, 3, 180, 1);
+    break;
+case 4:
+    draw_sprite(spr_score_num, 4, 180, 1);
+    break;
+case 5:
+    draw_sprite(spr_score_num, 5, 180, 1);
+    break;
+case 6:
+    draw_sprite(spr_score_num, 6, 180, 1);
+    break;
+case 7:
+    draw_sprite(spr_score_num, 7, 180, 1);
+    break;
+case 8:
+    draw_sprite(spr_score_num, 8, 180, 1);
+    break;
+case 9:
+    draw_sprite(spr_score_num, 9, 180, 1);
+    break;
+default:
+    // do nothing
+    break;
+}
+
+// draw the third digit (000100 - 000900)
+switch (floor((global.s / 100) % 10)) // (thirdnumber = floor((score / 100) % 10))
+{
+case 1:
+    draw_sprite(spr_score_num, 1, 175, 1);
+    break;
+case 2:
+    draw_sprite(spr_score_num, 2, 175, 1);
+    break;
+case 3:
+    draw_sprite(spr_score_num, 3, 175, 1);
+    break;
+case 4:
+    draw_sprite(spr_score_num, 4, 175, 1);
+    break;
+case 5:
+    draw_sprite(spr_score_num, 5, 175, 1);
+    break;
+case 6:
+    draw_sprite(spr_score_num, 6, 175, 1);
+    break;
+case 7:
+    draw_sprite(spr_score_num, 7, 175, 1);
+    break;
+case 8:
+    draw_sprite(spr_score_num, 8, 175, 1);
+    break;
+case 9:
+    draw_sprite(spr_score_num, 9, 175, 1);
+    break;
+default:
+    // do nothing
+    break;
+}
+
+// draw the fourth digit (001000 - 009000)
+switch (floor((global.s / 1000) % 10)) // (forthnumber = floor((score / 1000) % 10))
+{
+case 1:
+    draw_sprite(spr_score_num, 1, 170, 1);
+    break;
+case 2:
+    draw_sprite(spr_score_num, 2, 170, 1);
+    break;
+case 3:
+    draw_sprite(spr_score_num, 3, 170, 1);
+    break;
+case 4:
+    draw_sprite(spr_score_num, 4, 170, 1);
+    break;
+case 5:
+    draw_sprite(spr_score_num, 5, 170, 1);
+    break;
+case 6:
+    draw_sprite(spr_score_num, 6, 170, 1);
+    break;
+case 7:
+    draw_sprite(spr_score_num, 7, 170, 1);
+    break;
+case 8:
+    draw_sprite(spr_score_num, 8, 170, 1);
+    break;
+case 9:
+    draw_sprite(spr_score_num, 9, 170, 1);
+    break;
+default:
+    // do nothing
+    break;
+}
+
+// draw the fith digit (010000 - 090000)
+switch (floor((global.s / 10000) % 10)) // (fithnumber = floor((score / 10000) % 10))
+{
+case 1:
+    draw_sprite(spr_score_num, 1, 165, 1);
+    break;
+case 2:
+    draw_sprite(spr_score_num, 2, 165, 1);
+    break;
+case 3:
+    draw_sprite(spr_score_num, 3, 165, 1);
+    break;
+case 4:
+    draw_sprite(spr_score_num, 4, 165, 1);
+    break;
+case 5:
+    draw_sprite(spr_score_num, 5, 165, 1);
+    break;
+case 6:
+    draw_sprite(spr_score_num, 6, 165, 1);
+    break;
+case 7:
+    draw_sprite(spr_score_num, 7, 165, 1);
+    break;
+case 8:
+    draw_sprite(spr_score_num, 8, 165, 1);
+    break;
+case 9:
+    draw_sprite(spr_score_num, 9, 165, 1);
+    break;
+default:
+    // do nothing
+    break;
+}
+
+// draw the sixth digit (100000 - 900000)
+switch (floor((global.s / 100000) % 10)) // (sixthnumber = floor((score / 100000) % 10))
+{
+case 1:
+    draw_sprite(spr_score_num, 1, 160, 1);
+    break;
+case 2:
+    draw_sprite(spr_score_num, 2, 160, 1);
+    break;
+case 3:
+    draw_sprite(spr_score_num, 3, 160, 1);
+    break;
+case 4:
+    draw_sprite(spr_score_num, 4, 160, 1);
+    break;
+case 5:
+    draw_sprite(spr_score_num, 5, 160, 1);
+    break;
+case 6:
+    draw_sprite(spr_score_num, 6, 160, 1);
+    break;
+case 7:
+    draw_sprite(spr_score_num, 7, 160, 1);
+    break;
+case 8:
+    draw_sprite(spr_score_num, 8, 160, 1);
+    break;
+case 9:
+    draw_sprite(spr_score_num, 9, 160, 1);
+    break;
+default:
+    // do nothing
+    break;
+}
+
+// draw error if the score is more than 999999
+if (floor((global.s / 10000000) % 10) &gt; 0)
+{
+    draw_sprite(spr_score_err, 0, 160, 1);
+}
+
+// draw score (finish)
+
+
+// old //
+/*switch (global.s) {
 case 0:
     draw_sprite(spr_score, 0, 127, 1);
     break;
@@ -355,7 +581,7 @@ case 119:
 case 120:
     draw_sprite(spr_score_100, 20, 127, 1);
     break;
-}
+}*/
 
 if (instance_exists(obj_boss))
 {
@@ -432,6 +658,29 @@ if (global.hp &lt;= 0)
     draw_sprite(spr_dead,0,96,54);
     
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="18">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.s *=111;
 </string>
           </argument>
         </arguments>

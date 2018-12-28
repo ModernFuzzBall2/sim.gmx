@@ -39,13 +39,17 @@
     </sprites>
     <sprites name="gui">
       <sprite>sprites\spr_healthbar</sprite>
-      <sprite>sprites\spr_score</sprite>
-      <sprite>sprites\spr_score_num</sprite>
-      <sprite>sprites\spr_score_100</sprite>
       <sprite>sprites\spr_popup_one</sprite>
       <sprite>sprites\spr_dead</sprite>
       <sprite>sprites\spr_credits_key</sprite>
       <sprite>sprites\spr_boss_bar</sprite>
+      <sprites name="score">
+        <sprite>sprites\spr_score_num</sprite>
+        <sprite>sprites\spr_score_bor</sprite>
+        <sprite>sprites\spr_score_100</sprite>
+        <sprite>sprites\spr_score_err</sprite>
+        <sprite>sprites\spr_score</sprite>
+      </sprites>
     </sprites>
     <sprite>sprites\spr_cursor</sprite>
     <sprite>sprites\spr_countdown</sprite>
