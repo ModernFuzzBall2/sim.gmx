@@ -24,6 +24,7 @@
     <sound>sound\snd_boss_oof_one</sound>
     <sound>sound\snd_boss_one</sound>
     <sound>sound\snd_special</sound>
+    <sound>sound\snd_gift</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="player">
@@ -39,6 +40,8 @@
     <sprites name="gui">
       <sprite>sprites\spr_healthbar</sprite>
       <sprite>sprites\spr_score</sprite>
+      <sprite>sprites\spr_score_num</sprite>
+      <sprite>sprites\spr_score_100</sprite>
       <sprite>sprites\spr_popup_one</sprite>
       <sprite>sprites\spr_dead</sprite>
       <sprite>sprites\spr_credits_key</sprite>

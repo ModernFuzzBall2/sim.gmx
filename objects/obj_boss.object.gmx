@@ -81,7 +81,10 @@ instance_create(x,y,obj_gift);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// make the boss always look at the player
+            <string>// make sure the objects are always in the correct order
+depth = -y;
+
+// make the boss always look at the player
 if (instance_exists(obj_player))
 {
 if (obj_player.x &lt; x) image_xscale = 1;
