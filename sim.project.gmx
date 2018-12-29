@@ -61,17 +61,24 @@
     </sprites>
     <sprite>sprites\spr_gift</sprite>
     <sprite>sprites\spr_boss</sprite>
+    <sprite>sprites\spr_ball</sprite>
+    <sprite>sprites\spr_gg</sprite>
+    <sprite>sprites\sprite30</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tl_black</background>
     <background>background\tl_floor</background>
+    <background>background\tl_floor_three</background>
+    <background>background\tl_floor_two</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_create_enemy.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\obj_cursor</object>
     <object>objects\obj_player</object>
     <object>objects\obj_enemy</object>
-    <object>objects\obj_spawner</object>
     <object>objects\obj_enemy_fake</object>
     <object>objects\obj_game</object>
     <object>objects\obj_mushroom</object>
@@ -79,11 +86,13 @@
     <object>objects\gui_popup_one</object>
     <object>objects\obj_credits</object>
     <object>objects\obj_gift</object>
+    <object>objects\obj_ball</object>
     <object>objects\obj_boss</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
     <room>rooms\rm_boss_one</room>
+    <room>rooms\rm_two</room>
     <room>rooms\rm_credits</room>
   </rooms>
   <constants number="1">

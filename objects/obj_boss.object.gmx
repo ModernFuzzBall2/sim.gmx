@@ -33,6 +33,11 @@ audio_play_sound(snd_boss_one, 100, false);
 global.en = 0;
 
 hp = 17;
+
+alarm[0] = room_speed *2;
+alarm[1] = room_speed *20;
+
+active = true;
 </string>
           </argument>
         </arguments>
@@ -59,6 +64,60 @@ hp = 17;
 global.s += 100;
 audio_play_sound(snd_special,100,false);
 instance_create(x,y,obj_gift);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>active = false;
+hp --;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// create the ball
+instance_create(x,y,obj_ball);
+
+// reset alarm
+if (active == true)
+{
+alarm[0] = room_speed / 2;
+}
 </string>
           </argument>
         </arguments>
@@ -92,10 +151,10 @@ if (obj_player.x &lt; x) image_xscale = 1;
 }
 
 // remove sheild when all the enemies are dead
-if (global.s &gt;= 15 &amp;&amp; hp &gt; 16)
+/*if (global.s &gt;= 30 &amp;&amp; hp &gt; 16)
 {
     hp --;
-}
+}*/
 
 // controls death
 if (hp &lt;= 0)

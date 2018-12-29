@@ -122,6 +122,10 @@ ready = true;
             <string>// make sure the objects are always in the correct order
 depth = -y;
 
+// keep enemy in the visible area
+x = clamp(x, 0, room_width);
+y = clamp(y, 8, room_height);
+
 // if player dies stop moving
 if (!instance_exists(obj_player))
 {
@@ -140,37 +144,6 @@ else
   //instance is moving left
   sprite_index = spr_enemy_walk_left;
 }
-
-// search and destroy
-
-/*switch (keyboard_key)
-    {
-    case vk_left:
-    case ord("A"):
-      sprite_index = spr_enemy_walk_left;
-      //image_xscale = -1;
-      x -= sp;
-      break;
-    case vk_right:
-    case ord("D"):
-      sprite_index = spr_enemy_walk_right;
-      //image_xscale = 1;
-      x += sp;
-      break;
-    case vk_up:
-    case ord("W"):
-      sprite_index = spr_enemy_walk_right;
-      y -= sp;
-      break;
-    case vk_down:
-    case ord("S"):
-      sprite_index = spr_enemy_walk_right;
-      y += sp;
-      break;
-    default:
-      sprite_index = spr_enemy_idle;
-      break;
-    }*/
 </string>
           </argument>
         </arguments>
