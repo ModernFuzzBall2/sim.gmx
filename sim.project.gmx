@@ -63,12 +63,10 @@
     <sprite>sprites\spr_boss</sprite>
     <sprite>sprites\spr_ball</sprite>
     <sprite>sprites\spr_gg</sprite>
-    <sprite>sprites\sprite30</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tl_black</background>
     <background>background\tl_floor</background>
-    <background>background\tl_floor_three</background>
     <background>background\tl_floor_two</background>
   </backgrounds>
   <paths name="paths"/>
