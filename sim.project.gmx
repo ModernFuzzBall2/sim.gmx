@@ -5,26 +5,31 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
-    <sound>sound\snd_shoot</sound>
-    <sound>sound\snd_hurt</sound>
-    <sound>sound\snd_mushroom</sound>
-    <sound>sound\snd_potion</sound>
-    <sound>sound\snd_death</sound>
-    <sound>sound\snd_point</sound>
+    <sounds name="done">
+      <sound>sound\snd_shoot</sound>
+      <sound>sound\snd_zombie_two</sound>
+      <sound>sound\snd_zombie_one</sound>
+      <sound>sound\snd_mushroom</sound>
+      <sound>sound\snd_potion</sound>
+      <sound>sound\snd_boss_death</sound>
+      <sound>sound\snd_boss_oof_four</sound>
+      <sound>sound\snd_boss_oof_three</sound>
+      <sound>sound\snd_boss_oof_two</sound>
+      <sound>sound\snd_boss_oof_one</sound>
+      <sound>sound\snd_boss_one</sound>
+      <sound>sound\snd_win</sound>
+      <sound>sound\snd_ball</sound>
+      <sound>sound\snd_hurt</sound>
+      <sound>sound\snd_death</sound>
+      <sound>sound\snd_special</sound>
+      <sound>sound\snd_point</sound>
+    </sounds>
     <sounds name="background">
       <sound>sound\snd_background_one</sound>
       <sound>sound\snd_background_two</sound>
       <sound>sound\snd_background_three</sound>
       <sound>sound\snd_background_four</sound>
     </sounds>
-    <sound>sound\snd_boss_death</sound>
-    <sound>sound\snd_boss_oof_four</sound>
-    <sound>sound\snd_boss_oof_three</sound>
-    <sound>sound\snd_boss_oof_two</sound>
-    <sound>sound\snd_boss_oof_one</sound>
-    <sound>sound\snd_boss_one</sound>
-    <sound>sound\snd_special</sound>
-    <sound>sound\snd_gift</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="player">
@@ -58,12 +63,17 @@
       <sprite>sprites\icon_32</sprite>
       <sprite>sprites\icon_48</sprite>
       <sprite>sprites\icon_256</sprite>
+      <sprite>sprites\banner</sprite>
+      <sprite>sprites\banner_full</sprite>
     </sprites>
     <sprite>sprites\spr_gift</sprite>
     <sprite>sprites\spr_boss</sprite>
     <sprite>sprites\spr_ball</sprite>
+    <sprite>sprites\spr_name</sprite>
     <sprite>sprites\spr_credits</sprite>
     <sprite>sprites\spr_gg</sprite>
+    <sprite>sprites\spr_quit</sprite>
+    <sprite>sprites\spr_clear</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tl_black</background>
@@ -79,10 +89,13 @@
     <object>objects\obj_player</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_enemy_fake</object>
+    <object>objects\obj_enemy_boom</object>
+    <object>objects\obj_gg</object>
     <object>objects\obj_game</object>
     <object>objects\obj_mushroom</object>
     <object>objects\obj_health_pot</object>
     <object>objects\gui_popup_one</object>
+    <object>objects\obj_quit</object>
     <object>objects\obj_credits</object>
     <object>objects\obj_gift</object>
     <object>objects\obj_ball</object>

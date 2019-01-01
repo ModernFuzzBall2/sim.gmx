@@ -291,9 +291,15 @@ alarm[0] = room_speed * 20;
             <string>// if player clicks fire
 if (mouse_check_button_pressed(mb_left))
 {
-    //instance_destroy();
+    if (global.hp &gt; 1)
+    {
     global.hp -= 1;
-
+    audio_play_sound(snd_hurt, 100, false);
+    }
+    else
+    {
+    global.hp -= 1;
+    }
 }
 </string>
           </argument>

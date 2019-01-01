@@ -37,12 +37,21 @@ if (!instance_exists(obj_game))
 sp = 1;
 
 // search for the player
+if (global.start == false)
+{
 alarm[0] = room_speed*2;
+}
+else
+{
+alarm[0] = room_speed/2;
+}
 
 // take into consideration this enemy for the enemy counter
 global.ec ++;
 
 ready = false;
+
+boom = false;
 </string>
           </argument>
         </arguments>
@@ -96,6 +105,7 @@ speed=sp;
 direction=newdir;
 alarm[0]= irandom_range(15,45);
 ready = true;
+global.start = true;
 } 
 </string>
           </argument>
@@ -144,6 +154,17 @@ else
   //instance is moving left
   sprite_index = spr_enemy_walk_left;
 }
+
+if (boom == true)
+{
+    instance_create(x,y,obj_enemy_boom);
+    instance_destroy();
+}
+
+if (hspeed == 0 &amp;&amp; vspeed == 0)
+{
+sprite_index = spr_enemy_idle;
+}
 </string>
           </argument>
         </arguments>
@@ -171,7 +192,15 @@ else
 // remove a heart
 if (ready == true)
 {
+    if (global.hp &gt; 1)
+    {
+    audio_play_sound(snd_hurt, 100, false);
     global.hp --;
+    }
+    else
+    {
+    global.hp --;
+    }
 }
 
 ready = false;
