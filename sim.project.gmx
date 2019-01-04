@@ -7,8 +7,6 @@
   <sounds name="sound">
     <sounds name="done">
       <sound>sound\snd_shoot</sound>
-      <sound>sound\snd_zombie_two</sound>
-      <sound>sound\snd_zombie_one</sound>
       <sound>sound\snd_mushroom</sound>
       <sound>sound\snd_potion</sound>
       <sound>sound\snd_boss_death</sound>
@@ -84,6 +82,7 @@
   <scripts name="scripts">
     <script>scripts\scr_create_enemy.gml</script>
   </scripts>
+  <shaders name="shaders"/>
   <objects name="objects">
     <object>objects\obj_cursor</object>
     <object>objects\obj_player</object>
